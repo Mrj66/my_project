@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application pour flipo-richir">
+    <meta name="theme-color" content="#317EFB"/>
+    <link rel="stylesheet" href="/Style/menu.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Menu</title>
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="img">
+                <a href="/menu.html">
+                    <img src="/img/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="nav-icons">
+                <div class="bell">
+                    <div class="dropdown">
+                        <i class="bi bi-bell"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                          </svg>
+                        </i>
+                        <div class="dropdown-content">
+                            <em>Vous n'avez pas de notifications.</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <i class="fas fa-bars"></i>
+                    <div class="dropdown-content">
+                        <a href="Menu.html"><svg xmlns="C" width="20" height="20" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                          </svg>Menu
+                        </a>
+                        <a href="Mon compte.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                          </svg>Mon compte
+                        </a>
+                        <a href="Assistance.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+                          </svg>Assistance
+                        </a>
+                        <a href="Rapport.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                            <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                          </svg>Rapport 
+                        </a>
+                        <a href="statistique.html">
+                            <i class="fas fa-chart-line"></i>
+                            Statistique
+                        </a>  
+                        <a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+                            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+                          </svg>Déconnection
+                        </a>                                                                       
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="input-container center">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Rechercher..." class="form-control">
+        </div>
+        <br>
+        <legend>Bienvenue cher {$user}.</legend>
+        <p></p>
+        <p>Veuillez choisir quel type de checklist pour le rapport d'intervention vous voulez effectuer.</p>
+        <fieldset>
+            <div class="row mb-3">
+                <label for="trd">Type de rapport d'intervention</label>
+                <select id="rapport" size="1" class="form-select">
+                    <option  selected>Veuillez choisir</option>
+                    <option 1>VMVE</option>
+                    <option 2>VMV</option>
+                    <option 3>VME</option>
+                    <option 4>VMBA2</option>
+                    <option 5>VMBA1</option>
+                    <option 6>VM</option>
+                    <option 7>VEV</option>
+                    <option 8>VEARC</option>
+                    <option 9>VE</option>
+                    <option 10>VC</option>
+                    <option 11>VB</option>
+                    <option 12>V6M</option>
+                    <option 13>V1A</option>
+                    <option 14>V</option>
+                    <option 15>TBUDG</option>
+                    <option 16>T2ARC</option>
+                    <option 17>T1ARC</option>
+                    <option 18>T</option>
+                    <option 19>RLR</option>
+                    <option 20>RFA</option>
+                    <option 21>ONDUL</option>
+                    <option 22>NETT1</option>
+                    <option 23>MACGE</option>
+                    <option 24>ISD</option>
+                    <option 25>GL</option>
+                    <option 26>EQUI5</option>
+                    <option 27>EQUI4</option>
+                    <option 28>EQUI3</option>
+                    <option 29>EQUI2</option>
+                    <option 30>EQUI1</option>
+                    <option 31>ELD</option>
+                    <option 32>ECH8</option>
+                    <option 33>ECH7</option>
+                    <option 34>ECH6</option>
+                    <option 35>ECH5</option>
+                    <option 36>ECH4</option>
+                    <option 37>ECH3</option>
+                    <option 38>ECH2</option>
+                    <option 39>ECH1</option>
+                    <option 40>ECH</option>
+                    <option 41>EBC</option>
+                    <option 42>DEP</option>
+                    <option 43>COGE4</option>
+                    <option 44>COGE3</option>
+                    <option 45>COGE2</option>
+                    <option 46>COGE1</option>
+                    <option 47>CG800</option>
+                    <option 48>CG560</option>
+                    <option 49>CG480</option>
+                    <option 50>CG360</option>
+                    <option 51>CG300</option>
+                    <option 52>CG240</option>
+                    <option 53>CG120</option>
+                    <option 54>CG100</option>
+                    <option 55>CFUEL</option>
+                    <option 56>CC</option>
+                    <option 57>BATTD</option>
+                    <option 58>BATAU</option>
+                    <option 59>ALR</option>
+                    <option 60>AH</option>
+                    <option 61>AF</option>
+                </select>  
+        </fieldset>
+        <p> Où soit d'autres rapport
+        <fieldset>
+            <a href="commerciale.html"class="btn btn-primary">Rapport commerciale</a>
+        </fieldset>
+        <br>
+        <br>
+        <br>
+        <section>
+            <legend><strong>Données personnelles</strong></legend>
+            <p><strong>Clause de non-responsabilité</strong></p>
+            <p>Ce modèle sera ultérieurement complété par des informations concernant les directives sur le sort des données personnelles après le décès (Article 32-I-6° de la Loi du 6 janvier 1978 modifiée).
+              
+            <p> Les informations collectées sur ce formulaire sont stockées dans un fichier informatisé par FLIPO RICHIR pour la Gestion des Demandes Client et les Applications.
+              
+            <p> Elles sont conservées pendant 24 mois et sont destinées aux RH, Commerciaux.
+              
+            <p>  Conformément à la loi "Informatique et libertés", vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier en contactant :
+            <strong class="center"> 
+                <p>Christophe Debendère - FLIPO RICHIR
+                <p> 13 rue de Lorival
+                <p>  59113 SECLIN
+            </strong> 
+            <p>
+                Nous vous informons de l'existence de la liste "Bloctel" d'opposition au démarchage téléphonique, sur laquelle vous pouvez vous inscrire ici : https://conso.bloctel.fr/
+            </p>
+        </section>
+        <br> 
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>

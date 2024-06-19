@@ -1,0 +1,285 @@
+main{
+    margin: 2em;
+}
+.bell {
+    margin-right: 20px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    margin-bottom: 4em;
+}
+
+.nav-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+
+.bell,
+.dropdown {
+    font-size: 30px; 
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    margin-right: 5px;
+    font-size: 15px;
+    position: absolute; 
+
+}
+
+.dropdown-icon {
+    margin-right: 5px; 
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bell {
+    display: inline-block;
+    cursor: pointer;
+    animation: ring 4s 0.7s ease-in-out infinite;
+}
+
+.bell svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    transition: transform 0.2s;
+}
+/*
+@keyframes ring {
+    0% {
+        transform: rotate(0);
+    }
+
+    1% {
+        transform: rotate(30deg);
+    }
+
+    3% {
+        transform: rotate(-28deg);
+    }
+
+    5% {
+        transform: rotate(34deg);
+    }
+
+    7% {
+        transform: rotate(-32deg);
+    }
+
+    9% {
+        transform: rotate(30deg);
+    }
+
+    11% {
+        transform: rotate(-28deg);
+    }
+
+    13% {
+        transform: rotate(26deg);
+    }
+
+    15% {
+        transform: rotate(-24deg);
+    }
+
+    17% {
+        transform: rotate(22deg);
+    }
+
+    19% {
+        transform: rotate(-20deg);
+    }
+
+    21% {
+        transform: rotate(18deg);
+    }
+
+    23% {
+        transform: rotate(-16deg);
+    }
+
+    25% {
+        transform: rotate(14deg);
+    }
+
+    27% {
+        transform: rotate(-12deg);
+    }
+
+    29% {
+        transform: rotate(10deg);
+    }
+
+    31% {
+        transform: rotate(-8deg);
+    }
+
+    33% {
+        transform: rotate(6deg);
+    }
+
+    35% {
+        transform: rotate(-4deg);
+    }
+
+    37% {
+        transform: rotate(2deg);
+    }
+
+    39% {
+        transform: rotate(-1deg);
+    }
+
+    41% {
+        transform: rotate(1deg);
+    }
+
+    43% {
+        transform: rotate(0);
+    }
+}
+
+.bell:hover svg {
+    transform: scale(1.1);
+}
+*/
+
+.input-container {
+    position: relative;
+}
+
+.input-container input[type="text"] {
+    padding-left: 30px; 
+    width: 400px; 
+}
+
+.input-container i {
+    position: relative;
+    left: 22px; 
+    top: 90%;
+    transform: translateY(-6%);
+    color: #aaa; 
+}
+
+label{
+    margin-bottom: 0.5em;
+    margin-left: 0.3em;
+}
+
+#rapport{
+    width: 40%;
+    margin-left: 0.7em;
+}
+
+.container {
+    margin: 2em ;
+    padding: 2rem;
+    position: relative;
+}
+
+main .dropdown-content {
+    display: none;
+    margin-right: 5px;
+    font-size: 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border-radius: 30px;
+    padding: 1em;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.4s, color 0.4s;
+}
+  
+  .dark-mode {
+    background-color: #1E1E1E;
+    color: #fff;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    cursor: pointer;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switch i {
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #ccc;
+    transition: color 0.4s, left 0.4s;
+  }
+  
+  #darkModeToggle:checked + i {
+    color: #2196F3;
+    left: 31px;
+  }
+  
+@media screen and (max-width: 1056px) {
+    p {
+      font-size: 18px;
+    }
+
+    .header {
+        max-width: 80%;
+    }
+
+    .container {
+      width: 90%; 
+      max-width: none; 
+      margin: 1em 1em 1em 1em;
+      flex-basis: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container, header {
+        max-width: 100%;
+    }
+
+}

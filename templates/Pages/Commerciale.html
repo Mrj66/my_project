@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Application pour flipo-richir">
+        <meta name="theme-color" content="#317EFB"/>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="shortcut icon" href="./img/icon.png" type="image/png">
+        <link rel="stylesheet" href="/Style/commerciale.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <title>Rapport Commerciale</title>
+    </head>
+<body>
+  <div id="pdf">
+    <nav>
+      <div class="image">
+        <a href="Menu.html">
+          <img src="/img/logo.png" alt="logo">
+        </a>
+      </div>
+      <div>
+        <h3 class="center">RAPPORT COMMERCIALE</h3>
+      </div>
+      <div class="image">
+        <img src="/img/com.png" alt="commerciale">
+      </div>
+    </nav>
+    <main>
+      <form action="" method="post" class="p-4 border rounded">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="Emetteur">Emetteur</label>
+            <input type="text" id="Emetteur" class="form-control" required>
+          </div>
+          <div class="col">
+            <label for="Date">Date</label>
+            <input type="date" id="dateInput" class="form-control" required>
+          </div>
+          <div class="col">
+            <label for="N° D'intervention">Semaine concernée</label>
+            <input type="number" id="weekNumber" class="form-control" disabled>
+          </div>
+        </div>
+        <br>
+        <h4 class="text-center"> Demarche Commerciale et Prospection</h4>
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body t">
+                <h6 class="card-title">Chasser <i class="fa-solid fa-car-side"></i></h6>
+                <p class="card-text">Je cherche des nouvelles entreprises, je tourne dans des zones d'activité, j'essaie ...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body h">
+                <h6 class="card-title">Réseauter <i class="fas fa-network-wired icon"></i></h6>
+                <p class="card-text">Je contacte mon réseau perso ou pro, des anciens confrères, Linked'In, je suis sur un Salon ...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card 3">
+              <div class="card-body v">
+                <h6 class="card-title">Actualiser <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                    <path d="M4 0h4.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                  </svg></h6>
+                <p class="card-text">Je filtre la bdd, je passe des coups des fils, je reprend contact, j'actualise la bdd ...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card 4">
+              <div class="card-body g">
+                <h6 class="card-title">Fidéliser <i class="fa-solid fa-van-shuttle"></i></h6>
+                <p class="card-text">Je vais chez le client connu chercher une affaire quasi sure et identifiée à court terme ...</p>
+              </div>
+            </div>
+          </div>
+        </div>        
+        <br>
+        <h4 class="text-center"> Semaine écoulée</h4>
+        <div class="row mb-3">
+          <div class="col-12">
+            <table class="table table-bordered" id="inputTable">
+              <thead>
+                  <th colspan="2" class="text-center">Objectif commerciale de ma semaine écoulée</th>
+                <tr>
+                  <th>Objectif principale ...</th>
+                  <th>Objectif secondaire ...</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <select class="form-select" size="1" name="principale" required>
+                      <option value="0">Veuillez choisir</option>
+                      <option value="chasser"> Chasser</option>
+                      <option value="reseauter">Réseauter </option>
+                      <option value="actualiser">Actualiser </option>
+                      <option value="fideliser">fidéliser</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select" size="1" name="secondaire" required>
+                      <option value="0">Veuillez choisir</option>
+                      <option value="chasser" data-color="red">Chasser <i class="fa-solid fa-car-side"></i></option>
+                      <option value="reseauter">Réseauter <i class="fas fa-network-wired icon"></i></option>
+                      <option value="actualiser">Actualiser <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                        <path d="M4 0h4.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                      </svg></option>
+                      <option value="fideliser">fidéliser <i class="fa-solid fa-van-shuttle"></i></option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Intention ou activité ou plan d'actions particulier Commercial realisé cette semaine</label>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3" required>
+          <label for="check">Avez-vous réalisé l'intention particulière de la semaine précédente?</label>
+          <div class="col-6">
+            <div class="form-check">
+              <input type="checkbox" name="oui" class="form-check-input">
+              <label class="form-check-label" for="remember">Oui</label>
+              <textarea class="form-control" id="oui" rows="2"></textarea>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-check">
+              <input type="checkbox" name="non" class="form-check-input">
+              <label class="form-check-label" for="check">Non</label>
+              <textarea class="form-control" id="non" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Visite</th>
+                  <th>N°</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><label>N° de visites présentielles réalisées "chasse" :</label></td>
+                  <td><input type="number" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td><label>N° de visites présentielles réalisées "fidélisation" :</label></td>
+                  <td><input type="number" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td><label>Dont n° de contacts nouveaux ou reprise de contact (pas client depuis 3 ans +):</label></td>
+                  <td><input type="number" class="form-control"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <h4>Entreprise visitées</h4>
+        <p>Préciser : visite dans le dur ou par relation, nouveau contact, découverte du decteur...</p>
+        <p>changement d'attitude, d'organisation, de process, de décideur, rachat d'entreprise, climat social ... ?</p>
+        <div class="row mb-3">
+          <div class="col-12">
+            <table class="table table-bordered" id="table">
+              <thead>
+                <tr>
+                  <th>Entreprise visitées</th>
+                  <th>Type de visite</th>
+                  <th>Principal interlocuteur</th>
+                  <th>Objectif, Objet, motif ...</th>
+                  <th><i class="fas fa-car icon" style="color: red;"></i></th>
+                  <th><i class="fas fa-network-wired icon" style="color: yellow;"></i></th>
+                  <th><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16" style="fill: rgb(0, 119, 255);">
+                    <path d="M4 0h4.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                  </svg></th>
+                  <th><i class="fas fa-bus icon" style="color: rgb(29, 206, 29);"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input class="form-control" type="text" name="entreprise_visitees"></td>
+                  <td>
+                    <select class="form-select" size="1" name="type_visite">
+                        <option value="0">Veuillez choisir</option>
+                        <option value="visio">Visio</option>
+                        <option value="presentiel">Présentiel</option>
+                        <option value="telephone">Téléphone</option>
+                    </select>
+                  </td>
+                  <td><input class="form-control" type="text" name="principal_interlocuteur"></td>
+                  <td><input class="form-control" type="text" name="objectif_objet_motif"></td>
+                  <td><input type="checkbox" class="form-check-input chasser" name="chasser"></td>
+                  <td><input type="checkbox" class="form-check-input reseauter" name="reseauter"></td>
+                  <td><input type="checkbox" class="form-check-input actualiser" name="actualiser"></td>
+                  <td><input type="checkbox" class="form-check-input fideliser" name="fideliser"></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-secondary" id="add">+</button>
+          </div>
+        </div>
+        <br>
+        <h4>Nouveaux faits marquants de la semaine passée</h4>
+        <div class="row mb-3">
+          <label for="intention">Des demandes pour des devis particuliers? (Entreprise, avec qui ... quoi ...)</label>
+          <p>Nouveaux devis avec technologie, gros dossier, international ... Réactivation d'ancien devis?</p>
+          <p>y a-t-il une tendance de changement sur la prestation ou le produit demandé, sur la documentation, le QHSE ... ?</p>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Des commandes particulieres prises? (Entreprise, avec qui ... quoi ...)</label>
+          <p>Y a-t-il une spécificité sur ces commandes, des nouvelles exigences technique ou QHSE</p>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Visite faite sur une affaire en cours? (qui ... pourquoi cette visite ...)</label>
+          <p>Y a-t-il  un problème? Des TS possibles? De l'info possible?</p>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Visite et alerte sur probleme de paiement</label>
+          <p>y a-t-il un dysfonctionnement? Une garantie, un désaccord, un risque client?</p>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Autre Information - Divers</label>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <h4 class="text-center"> Semaine à venir</h4>
+        <div class="row mb-3">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                  <th colspan="2" class="text-center">Objectif commerciale de ma semaine écoulée</th>
+                <tr>
+                  <th>Objectif principale ...</th>
+                  <th>Objectif secondaire ...</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <select class="form-select" size="1" name="principale" required>
+                        <option value="0">Veuillez choisir</option>
+                        <option value="chasser" data-color="red">Chasser <i class="fa-solid fa-car-side"></i></option>
+                        <option value="reseauter">Réseauter <i class="fas fa-network-wired icon"></i></option>
+                        <option value="actualiser">Actualiser <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                          <path d="M4 0h4.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                        </svg></option>
+                        <option value="fideliser">fidéliser <i class="fa-solid fa-van-shuttle"></i></option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select" size="1" name="secondaire" required>
+                      <option value="0">Veuillez choisir</option>
+                      <option value="chasser" data-color="red">Chasser <i class="fa-solid fa-car-side"></i></option>
+                      <option value="reseauter">Réseauter <i class="fas fa-network-wired icon"></i></option>
+                      <option value="actualiser">Actualiser <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                        <path d="M4 0h4.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                      </svg></option>
+                      <option value="fideliser">fidéliser <i class="fa-solid fa-van-shuttle"></i></option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Intention ou activité ou plan d'actions particulier commerciale pour la semaine prochaine?</label>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <h4 class="text-center">Prospection prévue</h4>
+        <div class="row mb-3">
+          <div class="col-12">
+            <table class="table table-bordered" id="Prospection">
+              <thead>
+                <tr>
+                  <th>Entreprise visitées</th>
+                  <th>Type de visite</th>
+                  <th>Principal interlocuteur</th>
+                  <th>Objectif, Objet, motif ...</th>
+                  <th><i class="fas fa-car icon" style="color: red;"></i></th>
+                  <th><i class="fas fa-network-wired icon" style="color: yellow;"></i></th>
+                  <th><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16" style="fill: rgb(0, 119, 255);">
+                    <path d="M4 0h4.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+                  </svg></th>
+                  <th><i class="fas fa-bus icon" style="color: rgb(29, 206, 29);"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input class="form-control" type="text" name="entreprise_visitees"></td>
+                  <td>
+                    <select class="form-select" size="1" name="type_visite">
+                        <option value="0">Veuillez choisir</option>
+                        <option value="visio">Visio</option>
+                        <option value="presentiel">Présentiel</option>
+                        <option value="telephone">Téléphone</option>
+                    </select>
+                  </td>
+                  <td><input class="form-control" type="text" name="principal_interlocuteur"></td>
+                  <td><input class="form-control" type="text" name="objectif_objet_motif"></td>
+                  <td><input type="checkbox" class="form-check-input chasser" name="chasser"></td>
+                  <td><input type="checkbox" class="form-check-input reseauter" name="reseauter"></td>
+                  <td><input type="checkbox" class="form-check-input actualiser" name="actualiser"></td>
+                  <td><input type="checkbox" class="form-check-input fideliser" name="fideliser"></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-secondary" id="prevue">+</button>
+          </div>
+        </div>
+        <br>
+        <h4 class="text-center">Indicateurs de tendance (ressentis)</h4>
+        <p class="text-center">Par rapport à la semaine précédente ...</p>
+        <label for="impressions" class="form-label">Mes impressions sur l'évolution de la situation économique :</label>
+        <div class="trend-indicator">
+          <div class="trend-item">
+            <div class="trend-icon">
+                  <i class="fas fa-arrow-down" style="color: red;"></i>
+                  <span>-5</span>
+            </div>
+          </div>
+          <div>
+            <p>pessimiste</p>
+          </div>
+          <div class="trend-item">
+              <div class="trend-icon">
+                  <i class="fas fa-minus" style="color: grey;"></i>
+                  <span>0</span>
+              </div>
+          </div>
+          <div>
+            <p>optimiste</p>
+          </div>
+          <div class="trend-item">
+              <div class="trend-icon">
+                  <i class="fas fa-arrow-up" style="color: green;"></i>
+                  <span>+5</span>
+              </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <input type="range" class="form-range" min="-5" max="5" step="1" required>
+        </div>
+        <br>
+        <label for="devis" class="form-label">Les demandes de devis sont plutot ...</label>
+        <div class="trend-indicator">
+          <div class="trend-item">
+            <div class="trend-icon">
+                  <i class="fas fa-arrow-down" style="color: red;"></i>
+                  <span>-5</span>
+            </div>
+          </div>
+          <div>
+            <p>pessimiste</p>
+          </div>
+          <div class="trend-item">
+              <div class="trend-icon">
+                  <i class="fas fa-minus" style="color: grey;"></i>
+                  <span>0</span>
+              </div>
+          </div>
+          <div>
+            <p>optimiste</p>
+          </div>
+          <div class="trend-item">
+              <div class="trend-icon">
+                  <i class="fas fa-arrow-up" style="color: green;"></i>
+                  <span>+5</span>
+              </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <input type="range" class="form-range"  min="-5" max="5" step="1" required>
+        </div>
+        <br>
+        <label for="commandes" class="form-label">Mes prises de commandes sont plutot ...</label>
+        <div class="trend-indicator">
+          <div class="trend-item">
+            <div class="trend-icon">
+                  <i class="fas fa-arrow-down" style="color: red;"></i>
+                  <span>-5</span>
+            </div>
+          </div>
+          <div>
+            <p>pessimiste</p>
+          </div>
+          <div class="trend-item">
+              <div class="trend-icon">
+                  <i class="fas fa-minus" style="color: grey;"></i>
+                  <span>0</span>
+              </div>
+          </div>
+          <div>
+            <p>optimiste</p>
+          </div>
+          <div class="trend-item">
+              <div class="trend-icon">
+                  <i class="fas fa-arrow-up" style="color: green;"></i>
+                  <span>+5</span>
+              </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <input type="range" class="form-range" min="-5" max="5" step="1" required>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Autre commentaires :</label>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <label for="intention">Une idée que je voudrais mettre en oeuvre pour le commerce?</label>
+          <textarea class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <div class="col d-flex justify-content-end">
+            <button type="reset" onclick="return réinitialiser()" class="btn btn-secondary me-2">Réinitialiser</button>
+            <button id="pdf" type="submit" class="btn btn-primary">Continuer</button>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="/js/main.js"></script>
+</body>
+</html>

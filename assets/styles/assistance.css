@@ -1,0 +1,136 @@
+h1 {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.img{
+    margin-top: 2em;
+    
+    text-align: center;
+}
+
+.contact {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.ig{
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.contact-form {
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+section {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    margin: 1.5rem ;
+    background-color: #285c8c;
+}
+
+@media screen and (max-width: 1056px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact {
+        margin-left: 4em;
+        size: 20px;
+    }
+
+    .contact-form label {
+        margin-top: 0.75rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 0.375rem;
+    }
+
+    .contact-form input[type="submit"] {
+        padding: 0.375rem;
+    }
+    .container {
+        flex-basis: calc(100% - 10px);
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .contact-form {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .contact-form label {
+        font-size: 1.125rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 1.125rem;
+    }
+
+    .contact-form input[type="submit"] {
+        font-size: 1.125rem;
+    }
+    .container {
+        flex-basis: calc(50% - 10px) 
+    }
+    .contact-intro{
+        width:100%;
+    }
+}
