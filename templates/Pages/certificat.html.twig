@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+{% block title %}Connexion{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/Style/certificat.css">
+{% endblock %}
+
+{% block importmap %}{{ importmap('app') }}{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <header>
+      <div class="img">
+          <a href="/Menu.html">
+              <img src="/img/logo.png" alt="logo">
+          </a>
+      </div>
+      <div class="ig">
+          <img src="/img/groupe.png" alt="GRE">
+          <img src="/img/automatisme.png" alt="AVV">
+          <img src="/img/transformateur.png" alt="MTT">
+          <img src="/img/machines.png" alt="machines">
+      </div>
+  </header>
+  <br>
+  <h1>Accusé de réception</h1>
+  <br>
+  <div class="text-center">
+      <p>
+          Je <?php echo htmlspecialchars($nom_client);?>soussigné et atteste avoir reçu et signé le rapport FR<?php echo htmlspecialchars($n° rapport); ?> ,le <?php echo htmlspecialchars($date); ?>.
+      </p>
+  </div>
+  <br>
+  <div class="signatures">
+      <div>
+          <p>Nom Intervenant</p>
+          <p>
+              <?php echo htmlspecialchars($nom_intervenant); ?>
+          </p>
+          <p>Signature Intervenant</p>
+          <img src="<?php echo htmlspecialchars($signature_intervenant); ?>" alt="Signature Intervenant">
+      </div>
+      <div>
+          <p>Nom d'interlocuteur client</p>
+          <p><?php echo htmlspecialchars($nom_client); ?></p>
+          <p>Signature Client</p>
+          <img src="<?php echo htmlspecialchars($signature_client); ?>" alt="Signature Client">
+      </div>
+  </div>
+  <br>
+  <br>
+  <div class="text-center">
+      <h2>Contact</h2>
+      <br>
+      <div class="contact">
+          <div class="1">
+              <p><strong>Siège à LILLE:</strong></p>
+              <p> 13 rue de Lorival – BP 90314</p>
+              <p>59473 Seclin Cedex – FRANCE</p>
+              <p>Téléphone : +33 3 20 26 43 77</p>
+              <p>Fax : +33 3 20 24 82 26</p>
+          </div>
+          <div class="2">
+              <p><strong>Agence à Pontoise :</strong></p>
+              <p>16 rue Ampère</p>
+              <p>95300 Pontoise</p>
+              <p>Téléphone : +33 1 34 20 04 52</p>
+              <p>Fax : +33 9 70 61 09 76</p>
+          </div>
+          <div class="3">
+              <p><strong>Agence à Dunkerque :</strong></p>
+              <p>68 rue du Lapin Blanc</p>
+              <p>59140 DUNKERQUE</p>
+              <p>Téléphone : +33 3 28 20 08 07</p>
+              <p>Fax : +33 3 28 60 14 73</p>
+          </div>
+          <div class="4">
+              <p><strong>Agence Atlantique :</strong></p>
+              <p>4 rue des Métiers</p>
+              <p>49130 S.G.S.L</p>
+              <p>Téléphone : +33 2 41 80 20 70</p>
+              <p>Ou : +33 6 87 17 99 84</p>
+          </div>
+      </div>
+      <br>
+  </div>
+</div>
+{% endblock %}
