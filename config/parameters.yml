@@ -1,0 +1,6 @@
+parameters:
+    database_host: 'localhost'
+    database_port: '3307'
+    database_name: 'flipo'
+    database_user: 'root'
+    database_password: ''
