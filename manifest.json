@@ -1,0 +1,46 @@
+{
+    "name": "Flipo-richir",
+    "short_name": "Flipo",
+    "description": "Application interne",
+    "start_url": "/login.html",
+    "display": "standalone",
+    "background_color": "#E7F0F2",
+    "orientation": "portrait-primary",
+    "theme_color": "#fff",
+    "icons": [
+        {
+            "src": "./img/icon.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "maskable"
+
+        },
+        {
+            "src": "./img/icon.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "./img/icon.png",
+            "sizes": "1200x1200",
+            "type": "image/png"
+        }
+    ]
+}

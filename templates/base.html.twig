@@ -6,10 +6,14 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
             <link rel="icon" type="image/png" href="./img/icon.png">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <meta name="apple-mobile-web-app-title" content="Nom de votre application">
+            <link rel="apple-touch-icon" href="{{ asset('images/icon-192x192.png') }}">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="Application pour flipo-richir">
             <meta name="theme-color" content="#317EFB"/>
-            <link rel="manifest" href="/manifest.json">
+            <link rel="manifest" href="{{ asset('manifest.json') }}">            
             <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         {% endblock %}
 
