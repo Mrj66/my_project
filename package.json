@@ -18,6 +18,9 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "bootstrap": "^5.3.3"
+        "@hotwired/stimulus": "^3.2.2",
+        "@symfony/stimulus-bridge": "^3.2.2",
+        "bootstrap": "^5.3.3",
+        "yarn": "^1.22.22"
     }
 }
