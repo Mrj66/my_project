@@ -80,4 +80,7 @@
     </main>
 {% endblock %}
 
-{% block javascripts %}<script src="/js/main.js"></script>{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="../public/Js/connexion.js"></script>
+{% endblock %}
