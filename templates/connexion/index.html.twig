@@ -9,7 +9,6 @@
 
 {% block importmap %}{{ importmap('app') }}{% endblock %}
 
-
 {% block body %}
     <header>
         <div class="img">
@@ -25,6 +24,9 @@
         </div>
     </header>
     <main>
+      {% if error %}
+          <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+      {% endif %}
       <form action="" method="post">
         <div class="login-wrap">
           <div class="login-html">
@@ -32,20 +34,21 @@
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Réinitialisation</label>
             <div class="login-form">
               <div class="sign-in-htm">
-                <br>
+                <form action="{{ path('app_connexion') }}"  method="post">
+                  <br>
                 <p>Veuillez-vous connecter afin de continuer. Si vous avez oublie votre mot de passe, vous pouvez cliquer sur
                   'Réinitialisation'</p>
                 <p>Avez-vous besoin d'aide?<a href="/assistance"> Cliquer ici!</a></p>
                 <br>
                 <div class="group">
                   <label for="user" class="label">
-                    <input id="user" type="text" class="input" placeholder="Adresse mail">
+                    <input id="user" type="text" class="input" value="{{ email }}" placeholder="Adresse mail" required autofocus>
                   </label>
                 </div>
                 <br>
                 <div class="group">
                   <label for="pass" class="label"></label>
-                  <input id="pass" type="password" class="input" data-type="password" placeholder="Mot de passe">
+                  <input id="pass" type="password" class="input" data-type="password" placeholder="Mot de passe" required>
                 </div>
                 <div class="group">
                   <input id="check" type="checkbox" class="check" checked>
@@ -56,9 +59,11 @@
                   <a href="/menu" class="button">Se connecter</a>
                 </div>
                 <div class="hr"></div>
-              </div>
+                </div>
+                </form>  
               <div class="sign-up-htm">
-                <br>
+                <form method="post">
+                  <br>
                 <p>Pour réinitialiser votre mot de passe, veuillez rentre votre adresse mail correspondant avec votre compte.
                 </p>
                 <p>Avez-vous besoin d'aide?<a href="/assistance"> Cliquer ici!</a></p>
@@ -73,6 +78,7 @@
                 </div>
                 <div class="hr"></div>
               </div>
+                </form>
             </div>
           </div>
         </div>

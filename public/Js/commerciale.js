@@ -1,16 +1,8 @@
-document.getElementById('oui').addEventListener('change', function() {
-    if (this.checked) {
-      document.getElementById('textareaOui').style.display = 'block';
-    } else {
-      document.getElementById('textareaOui').style.display = 'none';
-    }
-});
-  
 document.getElementById('non').addEventListener('change', function() {
     if (this.checked) {
-      document.getElementById('textareaNon').style.display = 'block';
+        document.getElementById('textareaNon').style.display = 'block';
     } else {
-      document.getElementById('textareaNon').style.display = 'none';
+        document.getElementById('textareaNon').style.display = 'none';
     }
 });
 
