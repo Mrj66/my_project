@@ -24,17 +24,28 @@
         </div>
     </header>
     <main>
-      {% if error %}
-          <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-      {% endif %}
-      <form action="" method="post">
         <div class="login-wrap">
           <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Connexion</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Réinitialisation</label>
             <div class="login-form">
               <div class="sign-in-htm">
+                {% if app.user %}
+                  <div class="mb-3">
+                    Vous etes connecté {{ app.Employee.userIdentifier }}.
+                    <a href="{{ path('app_connexion') }}?logout">Deconnexion</a>
+                  </div>
+                {% endif %}
                 <form action="{{ path('app_connexion') }}"  method="post">
+                  {% if error %}
+                      <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                  {% endif %}
+
+                  {% if app.user %}
+                      <div class="mb-3">
+                          You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                      </div>
+                  {% endif %}
                   <br>
                 <p>Veuillez-vous connecter afin de continuer. Si vous avez oublie votre mot de passe, vous pouvez cliquer sur
                   'Réinitialisation'</p>
@@ -42,21 +53,24 @@
                 <br>
                 <div class="group">
                   <label for="user" class="label">
-                    <input id="user" type="text" class="input" value="{{ email }}" placeholder="Adresse mail" required autofocus>
+                    <input value="{{ last_username }}" class="input" name="email" id="inputEmail" autocomplete="email" placeholder="Adresse mail" required autofocus>
                   </label>
                 </div>
                 <br>
                 <div class="group">
                   <label for="pass" class="label"></label>
-                  <input id="pass" type="password" class="input" data-type="password" placeholder="Mot de passe" required>
+                  <input type="password" name="password" class="input" id="inputPassword" placeholder="Mot de passe"  autocomplete="current-password" required>
                 </div>
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}"
+                >
                 <div class="group">
-                  <input id="check" type="checkbox" class="check" checked>
+                  <input id="_remember_me" type="checkbox" class="check" checked>
                   <label for="check"><span class="icon"></span> Reste connecter</label>
                 </div>
                 <br>
                 <div class="group">
-                  <a href="/menu" class="button">Se connecter</a>
+                  <button class="button">Se connecter</button>
                 </div>
                 <div class="hr"></div>
                 </div>
@@ -82,11 +96,10 @@
             </div>
           </div>
         </div>
-      </form>
     </main>
 {% endblock %}
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
-    <script src="../public/Js/connexion.js"></script>
+    <script src="{{ asset('js/connexion.js') }}"></script>
 {% endblock %}
