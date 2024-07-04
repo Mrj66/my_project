@@ -36,7 +36,7 @@ class TestDatabaseConnectionCommand extends Command
 
         try {
             $this->connection->connect();
-            $io->success('Connected to the database successfully!');
+            $io->success('Connecté!');
         } catch (\Doctrine\DBAL\Exception $e) {
             $io->error('Connection failed: ' . $e->getMessage());
         }
