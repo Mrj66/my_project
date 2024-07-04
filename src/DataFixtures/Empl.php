@@ -12,7 +12,7 @@ class Empl extends Fixture
     {
         $employee = new Employee();
         $employee->setEmail('franck.pringue@flipo-richir.com');
-        $employee->setMdp('Badm!tt0n'); 
+        $employee->setMdp('Badm!tt0n');
 
         $manager->persist($employee);
 
@@ -21,6 +21,12 @@ class Empl extends Fixture
         $employee1->setMdp('Non-Badm!tt0n');
 
         $manager->persist($employee1);
+
+        $employee2 = new Employee();
+        $employee2->setEmail('olivier.nomdedeu@flipo-richir.com');
+        $employee2->setMdp('N@tat!0n');
+
+        $manager->persist($employee2);
 
         $manager->flush();
     }

@@ -75,10 +75,12 @@
                   <button class="button">Se connecter</button>
                 </div>
                 <div class="hr"></div>
-                </div>
                 </form>  
+                </div>
               <div class="sign-up-htm">
-                <form method="post">
+                {% for flash_error in app.flashes('reset_password_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                {% endfor %}
                   <br>
                 <p>Pour réinitialiser votre mot de passe, veuillez rentre votre adresse mail correspondant avec votre compte.
                 </p>
@@ -90,11 +92,10 @@
                 </div>
                 <br>
                 <div class="group">
-                  <input type="submit" class="button" value="Réinitialiser">
+                  <a href="{{ path('app_forgot_password_request') }}" type="submit" class="button">Réinitialiser</a>
                 </div>
                 <div class="hr"></div>
               </div>
-                </form>
             </div>
           </div>
         </div>

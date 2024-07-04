@@ -26,4 +26,11 @@ class SecurityController extends AbstractController
             'error' => $error,
         ]);
     }
+
+    public function logout(): Response
+    {
+        return $this->render('connexion/index.html.twig', [
+            'controller_name' => 'ConnexionController',
+        ]);        
+    }
 }
