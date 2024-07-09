@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.getElementById('dateInput');
+
+    const today = new Date();
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const formattedDate = today.toLocaleDateString('fr-FR', options).split('/').reverse().join('-');
+
+    dateInput.value = formattedDate;
+
+    dateInput.addEventListener('change', function() {
+        const selectedDate = new Date(this.value);
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const signaturePads = document.querySelectorAll(".signature-pad");
 
@@ -170,7 +184,7 @@ document.getElementById('pdfButton').addEventListener('click', function () {
             return uploadPDF(pdfBlob);
         })
         .then(() => {
-            window.location.href = '../Mon compte.html';
+            window.location.href = '/compte';
         })
         .catch(error => {
             console.error('Error:', error);

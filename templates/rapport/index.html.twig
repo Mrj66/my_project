@@ -25,7 +25,7 @@
       </div>
     </nav>
     <main>
-      <form action="" method="post" class="p-4 border rounded">
+      <form method="post" class="p-4 border rounded">
         <div class="row mb-3">
           <div class="col">
             <label for="reference">FR</label>
@@ -33,7 +33,7 @@
           </div>
           <div class="col">
             <label for="Date">Date</label>
-            <input type="date" class="form-control" required>
+            <input type="date" id="dateInput" class="form-control" required>
           </div>
           <div class="col">
             <label for="N° D'intervention">N° d'enregistrement</label>
@@ -112,6 +112,20 @@
           <div class="col">
             <label for="Type">Type d'activité</label>
             <input type="text" class="form-control" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="ref">REF</label>
+            <input type="number" class="form-control" required>
+          </div>
+          <div class="col">
+            <label for="Debut">Debut</label>
+            <input type="date" class="form-control" required>
+          </div>
+          <div class="col">
+            <label for="Fin">Fin</label>
+            <input type="date" class="form-control" required>
           </div>
         </div>
         <div class="row mb-3">
@@ -197,11 +211,10 @@
             <input type="text" id="new-type" name="new-type" class="form-control" style="display: none;">
           </div>
           <div class="col-12">
-            <button id="add-button" type="submit" name="add-button" class="btn btn-primary">Ajouter</button>
-            <button id="modify-button" type="submit" name="modify-button" class="btn btn-secondary" style="display: none;">Modifier</button>
+            <button id="add-button"  name="add-button" class="btn btn-primary">Ajouter</button>
+            <button id="modify-button" name="modify-button" class="btn btn-secondary" style="display: none;">Modifier</button>
           </div>
         </div>
-        <br>
         <div class="row mb-3">
           <div class="col">
             <label for="Compte rendu">Compte rendu</label>
@@ -437,5 +450,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="../public/Js/rapport.js"></script>
+    <script src="{{ asset('js/rapport.js') }}"></script>
 {% endblock %}

@@ -1,16 +1,3 @@
-import '../css/styles.css'; 
-
-console.log('Hello from page1.js');
-
-document.getElementById('non').addEventListener('change', function() {
-    if (this.checked) {
-        document.getElementById('textareaNon').style.display = 'block';
-    } else {
-        document.getElementById('textareaNon').style.display = 'none';
-    }
-});
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const dateInput = document.getElementById('dateInput');
     const weekNumberInput = document.getElementById('weekNumber');
@@ -64,6 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         inputTableBody.appendChild(newRow);
     });
+});
+
+document.getElementById('non').addEventListener('change', function() {
+    if (this.checked) {
+        document.getElementById('textareaNon').style.display = 'block';
+    } else {
+        document.getElementById('textareaNon').style.display = 'none';
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
