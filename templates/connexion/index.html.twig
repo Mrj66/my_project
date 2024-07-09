@@ -78,9 +78,8 @@
                 </form>  
                 </div>
               <div class="sign-up-htm">
-                {% for flash_error in app.flashes('reset_password_error') %}
-                    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-                {% endfor %}
+                {{ form_start(reset_form) }}
+                  {{ form_row(reset_form.email) }}
                   <br>
                 <p>Pour réinitialiser votre mot de passe, veuillez rentre votre adresse mail correspondant avec votre compte.
                 </p>
@@ -92,9 +91,10 @@
                 </div>
                 <br>
                 <div class="group">
-                <a href="{{ path('app_forgot_password_request') }}" type="submit" class="button">Réinitialiser</a>
+                <a href="{{ path('app_reset_password_request') }}" type="submit" class="button">Réinitialiser</a>
                 </div>
                 <div class="hr"></div>
+              {{ form_end(reset_form) }}
               </div>
             </div>
           </div>

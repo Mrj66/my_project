@@ -1,3 +1,7 @@
+import '../css/styles.css'; 
+
+console.log('Hello from page1.js');
+
 document.getElementById('non').addEventListener('change', function() {
     if (this.checked) {
         document.getElementById('textareaNon').style.display = 'block';

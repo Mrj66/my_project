@@ -20,18 +20,22 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('appli', './assets/app.js')
-    .addEntry('appli', './assets/js/commerciale.js')
-    .addEntry('appli', './assets/Js/connexion.js')
-    .addEntry('appli', './assets/js/rapport.js')
-    .addEntry('appli', './assets/js/sw.js')
+    .addEntry('app', './assets/app.js')
+    .addEntry('commerciale', './assets/js/commerciale.js')
+    .addEntry('connexion', './assets/Js/connexion.js')
+    .addEntry('rapport', './assets/js/rapport.js')
+    .addEntry('sw', './assets/js/sw.js')
 
+    .addStyleEntry('styles', './assets/css/styles.css')
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
     .enableStimulusBridge()
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
+    .cleanupOutputBeforeBuild()
+    .enableSourceMaps(!Encore.isProduction())
+    .enableVersioning(Encore.isProduction())
     /*
      * FEATURE CONFIG
      *

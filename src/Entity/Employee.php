@@ -65,5 +65,21 @@ class Employee implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->email;
     }
+/*
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $resetToken;
 
+
+    public function getResetToken(): ?string
+    {
+        return $this->resetToken;
+    }
+
+    public function setResetToken(?string $resetToken): self
+    {
+        $this->resetToken = $resetToken;
+
+        return $this;
+    }
+*/
 }
