@@ -11,12 +11,14 @@ use Doctrine\DBAL\Connection;
 
 #[AsCommand(
     name: 'TestDatabaseConnection',
-    description: 'Add a short description for your command',
+    description: 'Test the database connection',
 )]
 class TestDatabaseConnectionCommand extends Command
 {
     protected static $defaultName = 'app:test-database-connection';
+
     private $connection;
+
     public function __construct(Connection $connection)
     {
         parent::__construct();
@@ -25,9 +27,7 @@ class TestDatabaseConnectionCommand extends Command
 
     protected function configure(): void
     {
-        $this
-            ->setDescription('Tests the database connection.')
-        ;
+        $this->setDescription('Tests the database connection.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -35,10 +35,21 @@ class TestDatabaseConnectionCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         try {
-            $this->connection->connect();
-            $io->success('Connecté!');
-        } catch (\Doctrine\DBAL\Exception $e) {
+            $this->connection->executeQuery('SELECT 1');
+            $io->success('Doctrine connection successful!');
+
+            $dsn = "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=C:\Users\junio\Downloads\FACAPPLIV3\FACAPPLIV3\data.mdb" . $_ENV['DB_PATH'];
+            $odbcConnection = odbc_connect($dsn, $_ENV['DB_USER'], $_ENV['DB_PASS']);
+
+            if ($odbcConnection) {
+                $io->success('ODBC connection successful!');
+                odbc_close($odbcConnection);
+            } else {
+                $io->error('ODBC connection failed: ' . odbc_errormsg());
+            }
+        } catch (\Exception $e) {
             $io->error('Connection failed: ' . $e->getMessage());
+            return Command::FAILURE;
         }
 
         return Command::SUCCESS;

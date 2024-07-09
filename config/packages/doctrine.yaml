@@ -1,14 +1,17 @@
 doctrine:
     dbal:
-        url: '%env(resolve:DATABASE_URL)%'
-        driver: 'pdo_odbc'
-
+        default_connection: default
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
         #server_version: '16'
 
-        profiling_collect_backtrace: '%kernel.debug%'
-        use_savepoints: true
+        connections:
+            default:
+                driver: 'pdo_odbc'
+                url: '%env(resolve:DATABASE_URL)%'
+            access_connection:
+                driver_class: App\Doctrine\Driver\PDOOdbc\Driver
+                url: '%env(resolve:DATABASE_URL)%'
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
@@ -25,6 +28,7 @@ doctrine:
                 alias: App
         controller_resolver:
             auto_mapping: false
+        connection: access_connection
 
 when@test:
     doctrine:
