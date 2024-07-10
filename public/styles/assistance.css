@@ -86,8 +86,10 @@ section {
     }
 
     .contact {
-        margin-left: 4em;
-        size: 20px;
+        gap: 5px;
+        font-size: 0.8em;
+        margin: 1.9em;
+        margin-left: 2em;
     }
 
     .contact-form label {

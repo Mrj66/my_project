@@ -2,8 +2,12 @@ main{
   color: white; 
   margin: 2em;
   background-color: #285c8c;
-
 }
+
+#textareaNon {
+  display: none;
+}
+
 form{
   margin: auto;
 }

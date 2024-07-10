@@ -53,12 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.getElementById('non').addEventListener('change', function() {
-    if (this.checked) {
-        document.getElementById('textareaNon').style.display = 'block';
-    } else {
-        document.getElementById('textareaNon').style.display = 'none';
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('non').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('textareaNon').style.display = 'block';
+        } else {
+            document.getElementById('textareaNon').style.display = 'none';
+        }
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {

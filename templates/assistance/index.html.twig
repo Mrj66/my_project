@@ -11,7 +11,7 @@
 {% block body %}
 <header>
     <div class="img">
-        <a href="/">
+        <a href="#" onclick="goBack(event)">
             <img src="/img/logo.png" alt="logo">
         </a>
     </div>
@@ -62,7 +62,7 @@
         <p>Si vous avez besoin d'aide supplémentaire, n'hésitez pas à specifier votre demande ci-dessus.</p>
     </div>
     <br>
-    <form action="mailto:contact@flipo-richir.com" method="post" class="contact-form">
+    <form action="{{ path('form_submit')}}" method="post" class="contact-form">
         <div class="mb-3">
             <input type="text" class="form-control" id="NP" placeholder="Nom et Prenom:" required>
             <label for="NP"></label>
@@ -93,4 +93,10 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
+    <script>
+        function goBack(e) {
+            e.preventDefault();
+            window.history.back();
+        }
+    </script>
 {% endblock %}

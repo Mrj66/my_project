@@ -4,6 +4,11 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+form_submit:
+    path: /form/submit
+    methods: ['POST']
+    controller: App\Controller\YourController::formSubmit
+    
 app_logout:
     path: /logout
     methods: GET
