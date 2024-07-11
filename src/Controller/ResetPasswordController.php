@@ -54,35 +54,5 @@ class ResetPasswordController extends AbstractController
         ]);
     }
 
-    #[Route('/reset-password/{token}', name: 'app_reset_password')]
-    public function reset(Request $request, string $token, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher): Response
-    {
-        $user = $entityManager->getRepository(Employee::class)->findOneBy(['resetToken' => $token]);
-
-        if (!$user) {
-            $this->addFlash('error', 'Invalid token.');
-            return $this->redirectToRoute('app_connexion');
-        }
-
-        $form = $this->createForm(ResetPasswordFormType::class);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $hashedPassword = $passwordHasher->hashPassword(
-                $user,
-                $form->get('password')->getData()
-            );
-            $user->setMdp($hashedPassword);
-            $user->setResetToken(null);
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            $this->addFlash('success', 'Password has been reset successfully.');
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('reset_password/reset.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
+    
 }
