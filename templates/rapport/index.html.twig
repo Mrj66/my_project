@@ -25,18 +25,18 @@
       </div>
     </nav>
     <main>
-      <form method="post" class="p-4 border rounded">
+      <form action="{{ path('rapport_pdf') }}" method="post" class="p-4 border rounded">
         <div class="row mb-3">
           <div class="col">
-            <label for="reference">FR</label>
+            <label for="reference">FR {{ data.ref }}</label>
             <input type="number" id="ref" class="form-control" disabled>
           </div>
           <div class="col">
-            <label for="Date">Date</label>
+            <label for="Date">Date {{ data.date|date('d/m/Y') }}</label>
             <input type="date" id="dateInput" class="form-control" required>
           </div>
           <div class="col">
-            <label for="N° D'intervention">N° d'enregistrement</label>
+            <label for="N° D'intervention">N° d'enregistrement {{ data.n_intervention }}</label>
             <input type="number" class="form-control" required>
           </div>
         </div>
@@ -44,15 +44,15 @@
         <div class="row mb-3">
           <h3 class="center">Coordonnées Utilisateur</h3>
           <div class="col">
-            <label for="Client">Utilisateur</label>
+            <label for="Client">Utilisateur {{ data.userNom }}</label>
             <input type="text" class="form-control" required>
           </div>
           <div class="col">
-            <label for="Objet">Email Utilisateur</label>
+            <label for="Objet">Email Utilisateur {{ data.userEmail }}</label>
             <input type="email" class="form-control" required>
           </div>
           <div class="col">
-            <label for="Objet">N° de télephone</label>
+            <label for="Objet">N° de télephone {{ data.userPhone }}</label>
             <input type="number" class="form-control" required>
           </div>
         </div>
@@ -60,30 +60,30 @@
         <div class="row mb-3">
           <h3 class="center">Coordonnées Client</h3>
           <div class="col">
-            <label for="Client">Client</label>
+            <label for="Client">Client {{ data.ClientNom }}</label>
             <input type="text" class="form-control" required>
           </div>
           <div class="col">
-            <label for="Objet">Email interlocuteur</label>
+            <label for="Objet">Email interlocuteur {{ data.Clientmail }}</label>
             <input type="email" class="form-control" required>
           </div>
           <div class="col">
-            <label for="Objet">N° de télephone</label>
+            <label for="Objet">N° de télephone {{ data.ClientPhone }}</label>
             <input type="number" class="form-control" required>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <label for="adresse">Adresse</label>
+            <label for="adresse">Adresse {{ data.useraddress }}</label>
             <input type="text" class="form-control" required>
           </div>
           <div class="col" id="in">
-            <label for="nom d'agent">Intervenant(s)</label>
+            <label for="nom d'agent">Intervenant(s) {{ data.agentNom }}</label>
             <input type="text" class="form-control" required>
             <button class="btn btn-secondary" id="int">+</button> 
           </div>
           <div class="col">
-            <label for="N° D'intervention">N° de dévis</label>
+            <label for="N° D'intervention">N° de dévis {{ data.n_devis }}</label>
               <input type="number" class="form-control">
           </div>
         </div>
@@ -395,22 +395,22 @@
           <h3 class="center">Signature</h3>
           <div class="col-6">
             <div class="mb-3">
-              <label for="nom_agent">Nom d'Intervenant</label>
+              <label for="nom_agent">Nom d'Intervenant {{ data.agentName }}</label>
               <input type="text" id="nom_agent" class="form-control" required>
               <label for="sign_agent">Signature d'Intervenant:</label>
               <div class="signature-pad">
-                <svg class="signature-svg" required></svg>
+                <svg src="{{ data.agentSignature }}" class="signature-svg" required></svg>
                 <button class="clear-button">Retenter</button>
               </div>
             </div>
           </div>
           <div class="col-6">
             <div class="mb-3">
-              <label for="nom_client">Nom d'interlocuteur</label>
+              <label for="nom_client">Nom d'interlocuteur {{ data.clientName }}</label>
               <input type="text" id="nom_client" class="form-control" required>
               <label for="sign_client">Signature client:</label>
               <div class="signature-pad">
-                <svg class="signature-svg" required></svg>
+                <svg src="{{ data.clientSignature }}" class="signature-svg" required></svg>
                 <button class="clear-button">Retenter</button>
               </div>
             </div>

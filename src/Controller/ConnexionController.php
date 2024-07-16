@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Controller;
-namespace App\Form;
 
+use App\Form\ChangePasswordFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -85,7 +85,6 @@ class ConnexionController extends AbstractController
         if (!$employee) {
             throw $this->createNotFoundException('No reset password token found in the URL or in the session.');
         }
-
         $form = $this->createForm(ChangePasswordFormType::class);
         $form->handleRequest($request);
 

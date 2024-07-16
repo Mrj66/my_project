@@ -12,3 +12,18 @@ form_submit:
 app_logout:
     path: /logout
     methods: GET
+
+rapport_pdf:
+    path: /rapport
+    controller: App\Controller\rapportController::processForm
+    methods: POST
+
+commercial_pdf:
+    path: /commerciale
+    controller: App\Controller\commercialeController::processForm
+    methods: POST
+
+certificat_pdf:
+    path: /certificat
+    controller: App\Controller\certificatController::processForm
+    methods: POST
