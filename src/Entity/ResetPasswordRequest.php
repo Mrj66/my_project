@@ -36,4 +36,17 @@ class ResetPasswordRequest implements ResetPasswordRequestInterface
     {
         return $this->user;
     }
+    private $resetToken;
+
+    public function getResetToken(): ?string
+    {
+        return $this->resetToken;
+    }
+
+    public function setResetToken(?string $resetToken): self
+    {
+        $this->resetToken = $resetToken;
+
+        return $this;
+    }
 }

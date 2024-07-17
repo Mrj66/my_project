@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use App\Form\ResetPasswordType;
 use App\Repository\EmployeeRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
@@ -19,7 +18,7 @@ class ConnexionController extends AbstractController
     #[Route('/', name: 'app_connexion')]
     public function index(Request $request, EmployeeRepository $employeeRepository, MailerInterface $mailer): Response
     {
-        $resetForm = $this->createForm(ResetPasswordType::class);
+        $resetForm = $this->createForm(ChangePasswordFormType::class);
         $resetForm->handleRequest($request);
 
         if ($resetForm->isSubmitted() && $resetForm->isValid()) {

@@ -16,6 +16,14 @@ class EmployeeRepository extends ServiceEntityRepository
         parent::__construct($registry, Employee::class);
     }
 
+    public function generateResetToken(Employee $user): string
+    {
+        $token = bin2hex(random_bytes(32));
+        $user->setResetToken($token);
+        $this->getEntityManager()->flush();
+        return $token;
+    }
+
     //    /**
     //     * @return Employee[] Returns an array of Employee objects
     //     */

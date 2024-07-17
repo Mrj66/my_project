@@ -1,7 +1,8 @@
 twig:
-    file_name_pattern: '*.twig'
-    form_themes: ['@Symfony/UX/Turbo/Form/turbo_form_layout.html.twig']
-
+    paths: ['%kernel.project_dir%/templates']
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_5_layout.html.twig']
 
 when@test:
     twig:

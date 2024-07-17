@@ -4,13 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Employee;
 use App\Form\ResetPasswordRequestFormType;
-use App\Form\ResetPasswordFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Mailer\MailerInterface;
@@ -38,18 +36,18 @@ class ResetPasswordController extends AbstractController
                     ->from('your@email.com')
                     ->to($user->getEmail())
                     ->subject('Password Reset Request')
-                    ->html("<p>To reset your password, please click the link below:</p><a href=\"{$this->generateUrl('app_reset_password', ['token' => $token], UrlGeneratorInterface::ABSOLUTE_URL)}\">Reset Password</a>");
+                    ->html("<p>Pour reinitialiser votre mot de passe, veuillez cliquer sur le lien ci-dessu:</p><a href=\"{$this->generateUrl('app_reset_password', ['token' => $token], UrlGeneratorInterface::ABSOLUTE_URL)}\">Reset Password</a>");
 
                 $mailer->send($email);
 
-                $this->addFlash('success', 'Password reset link sent to your email.');
+                $this->addFlash('success', 'Le lien pour reintialiser votre mot de passe vous a ete envoyer par email.');
                 return $this->redirectToRoute('app_connexion');
             }
 
-            $this->addFlash('error', 'Email not found.');
+            $this->addFlash('error', 'Email non reconnue.');
         }
 
-        return $this->render('connexion/index.html.twig', [
+        return $this->render('connexion/reset.html.twig', [
             'form' => $form->createView(),
         ]);
     }

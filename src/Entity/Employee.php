@@ -65,7 +65,7 @@ class Employee implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->email;
     }
-/*
+
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $resetToken;
 
@@ -81,5 +81,12 @@ class Employee implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-*/
+
+    private $resetTokenExpiresAt;
+
+    public function isResetTokenValid(): bool
+    {
+        return $this->resetTokenExpiresAt > new \DateTime();
+    }
+
 }
