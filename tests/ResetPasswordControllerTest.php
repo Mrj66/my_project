@@ -40,7 +40,7 @@ class ResetPasswordControllerTest extends WebTestCase
         // Create a test user
         $user = (new Employee())
             ->setEmail('me@example.com')
-            ->setPassword('a-test-password-that-will-be-changed-later')
+            ->setMdp('a-test-password-that-will-be-changed-later')
         ;
         $this->em->persist($user);
         $this->em->flush();
