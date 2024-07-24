@@ -8,9 +8,10 @@ self.addEventListener('install', function(event) {
         '/public/styles/commerciale.css',
         '/public/styles/login.css',
         '/public/styles/compte.css',
+        '/public/styles/menu.css',
+        '/public/styles/rapport.css',
 
-
-        '/Js/app.js'
+        '/assets/app.js'
       ]);
     })
   );
